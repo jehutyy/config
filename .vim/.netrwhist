@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/Documents/btree_clean_imp'
+let g:netrw_dirhist_2='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/prog/c/btree'
+let g:netrw_dirhist_3='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/.vim'
+let g:netrw_dirhist_4='/ccc/dsku/nfs-server/user/cont001/ocre/daking/ferme'
+let g:netrw_dirhist_5='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/.vim'
+let g:netrw_dirhist_6='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/Documents/lustre-release'
+let g:netrw_dirhist_7='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/Documents/lustre-release/lustre'
+let g:netrw_dirhist_8='/ccc/dsku/nfs-server/user/cont001/ocre/pagnata/Documents/lustre-release/lustre/ptlrpc'
