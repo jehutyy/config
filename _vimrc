@@ -1,5 +1,6 @@
 filetype plugin indent on
 syntax on
+set title
 set cindent
 set smartindent
 set smarttab
