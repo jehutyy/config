@@ -33,3 +33,4 @@ vmap <F6> o<Esc>i/*<Esc>gvO<Esc>a*/<Esc>
 hi Comment ctermfg=blue
 hi Search ctermfg=white ctermbg=blue
 set visualbell
+set noerrorbells
