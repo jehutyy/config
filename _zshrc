@@ -41,6 +41,7 @@ alias dc="cd"
 
 export PATH=/usr/lib64/qt-3.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sr/bin:/ccc/home/cont001/ocre/pagnata/bin/bin:/usr/local/libre/bin
 
+export EDITOR=vim
 # Function to switch and save the current path
 function cd() {  
 builtin cd "$@";
@@ -56,3 +57,8 @@ colors
 #PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} %~ $ %{$reset_color%}"
 PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} $ %{$reset_color%}"
 RPROMPT="%{$fg[white]%}%~%{$reset_color%}"
+
+#Enable Ctrl-x-e to edit command line
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
