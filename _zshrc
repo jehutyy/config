@@ -45,15 +45,6 @@ alias dc="cd"
 
 export EDITOR=vim
 
-#function to do for loop
-function repeat() {
-echo aaa$2
-        for i in {0..$1}
-        do
-                $2
-        done
-}
-
 # Function to switch and save the current path
 function cd() {  
         builtin cd "$@";
@@ -80,5 +71,5 @@ bindkey '^xe' edit-command-line
 
 #Enable help
 autoload -Uz run-help
-unalias run-help
+#unalias run-help
 alias help=run-help
