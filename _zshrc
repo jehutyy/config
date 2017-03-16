@@ -3,7 +3,7 @@
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
-zstyle :compinstall filename '/ccc/home/cont001/ocre/pagnata/.zshrc'
+zstyle :compinstall filename '$HOME.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -30,8 +30,6 @@ promptinit
 
 prompt suse
 
-alias l="ls --color"
-alias ls="ls --color"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
@@ -39,14 +37,29 @@ alias history="history 1"
 alias ..="cd .."
 alias dc="cd"
 
-export PATH=/usr/lib64/qt-3.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sr/bin:/ccc/home/cont001/ocre/pagnata/bin/bin:/usr/local/libre/bin
+#export PATH to include bin from home
+#export PATH=
+#
+#export MANPATH to include man from home
+#export MANPATH=
 
 export EDITOR=vim
+
+#function to do for loop
+function repeat() {
+echo aaa$2
+        for i in {0..$1}
+        do
+                $2
+        done
+}
+
 # Function to switch and save the current path
 function cd() {  
-builtin cd "$@";
-echo "$PWD" > ~/.cwd;
+        builtin cd "$@";
+        echo "$PWD" > ~/.cwd;
 }
+
 export cd  
 alias cwd='cd "$(cat ~/.cwd)"'  
 setopt nonomatch
@@ -59,6 +72,13 @@ PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} $ %{$reset_color%}"
 RPROMPT="%{$fg[white]%}%~%{$reset_color%}"
 
 #Enable Ctrl-x-e to edit command line
-autoload edit-command-line
+autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^Xe' edit-command-line
+bindkey '^xe' edit-command-line
+#bindkey -M vicmd v edit-command-line
+
+
+#Enable help
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
