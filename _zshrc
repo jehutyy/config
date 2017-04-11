@@ -3,7 +3,7 @@
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
-zstyle :compinstall filename '$HOME.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -29,6 +29,8 @@ autoload -Uz promptinit
 promptinit
 
 prompt suse
+
+eval $(dircolors -b)
 
 alias ll="ls -l"
 alias la="ls -a"
@@ -59,7 +61,8 @@ setopt NO_BEEP
 autoload -Uz colors 
 colors
 #PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} %~ $ %{$reset_color%}"
-PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} $ %{$reset_color%}"
+#PROMPT="%{$fg[green]%}%n@%m%{$reset_color%}%{$fg[blue]%} $ %{$reset_color%}"
+PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} [%F{red}%?%f][%j]%{$fg[blue]%} $ %{$reset_color%}
 RPROMPT="%{$fg[white]%}%~%{$reset_color%}"
 
 #Enable Ctrl-x-e to edit command line
@@ -71,5 +74,5 @@ bindkey '^xe' edit-command-line
 
 #Enable help
 autoload -Uz run-help
-#unalias run-help
+unalias run-help
 alias help=run-help
